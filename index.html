@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>ড্রয়ার মেনু</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="drawer">
+        <button onclick="openFeature('upload')">📷 ফটো আপলোড</button>
+        <button onclick="openFeature('number_search')">📞 নাম্বার সার্চ</button>
+    </div>
+
+    <script>
+        function openFeature(page) {
+            window.location.href = "/" + page;
+        }
+    </script>
+</body>
+</html>
