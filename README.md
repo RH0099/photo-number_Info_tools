@@ -8,14 +8,3 @@ Copy code
 ````
 pip install flask flask-wtf flask-bootstrap werkzeug requests beautifulsoup4 opencv-python numpy
 ````
-📂 ## **ফোল্ডার স্ট্রাকচার:**
-
- /project
- │── /static
- │   │── styles.css
- │── /templates
- │   │── index.html
- │   │── upload.html
- │   │── number_search.html
- │── app.py
- │── config.py
