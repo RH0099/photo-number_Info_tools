@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>ফটো আপলোড</title>
+</head>
+<body>
+    <h2>আপনার ছবি আপলোড করুন</h2>
+    <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo" required>
+        <button type="submit">🔍 খুঁজুন</button>
+    </form>
+
+    {% if filename %}
+        <h3>আপনার আপলোড করা ছবি:</h3>
+        <img src="{{ url_for('static', filename='uploads/' + filename) }}" width="200">
+        
+        <h3>পাওয়া তথ্য:</h3>
+        <ul>
+            {% for key, value in info.items() %}
+                <li><strong>{{ key }}:</strong> <a href="{{ value }}" target="_blank">{{ value }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
