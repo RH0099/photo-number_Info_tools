@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>নাম্বার সার্চ</title>
+</head>
+<body>
+    <h2>ফোন নাম্বার দিয়ে সার্চ করুন</h2>
+    <form action="{{ url_for('number_search') }}" method="POST">
+        <input type="text" name="phone_number" placeholder="ফোন নাম্বার লিখুন" required>
+        <button type="submit">🔍 খুঁজুন</button>
+    </form>
+
+    {% if info %}
+        <h3>পাওয়া তথ্য:</h3>
+        <ul>
+            {% for key, value in info.items() %}
+                <li><strong>{{ key }}:</strong> <a href="{{ value }}" target="_blank">{{ value }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
